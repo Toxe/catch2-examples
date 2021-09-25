@@ -16,3 +16,4 @@ include(cmake/StaticAnalyzers.cmake)
 include(cmake/Sanitizers.cmake)
 
 add_subdirectory(src/libtestee)
+add_subdirectory(src/single_header_multiple_test_files)
