@@ -17,3 +17,4 @@ include(cmake/Sanitizers.cmake)
 
 add_subdirectory(src/libtestee)
 add_subdirectory(src/single_header_multiple_test_files)
+add_subdirectory(src/single_header_single_test_file)
