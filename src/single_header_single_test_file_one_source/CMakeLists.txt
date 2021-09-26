@@ -1,0 +1,15 @@
+add_executable(single_header_single_test_file_one_source main.cpp)
+
+set_target_properties(single_header_single_test_file_one_source PROPERTIES CXX_EXTENSIONS OFF)
+target_compile_features(single_header_single_test_file_one_source PUBLIC cxx_std_20)
+target_compile_options(single_header_single_test_file_one_source PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
+target_link_libraries(single_header_single_test_file_one_source PRIVATE ${SANITIZER_FLAGS} testee)
+
+# Tests
+add_executable(single_header_single_test_file_one_source_tests tests.cpp)
+
+set_target_properties(single_header_single_test_file_one_source_tests PROPERTIES CXX_EXTENSIONS OFF OUTPUT_NAME tests)
+target_compile_features(single_header_single_test_file_one_source_tests PUBLIC cxx_std_20)
+target_compile_options(single_header_single_test_file_one_source_tests PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
+target_include_directories(single_header_single_test_file_one_source_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} include)
+target_link_libraries(single_header_single_test_file_one_source_tests PRIVATE ${SANITIZER_FLAGS} testee)

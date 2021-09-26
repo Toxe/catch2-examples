@@ -56,7 +56,7 @@ $ ./build/src/single_header_multiple_test_files/test_sub
 All tests passed (6 assertions in 1 test case)
 ```
 
-### `src/single_header_single_test_file`
+### `src/single_header_single_test_file_one_source`
 
 - Uses and includes the single header version of Catch2 v2.13.7.
 - One test file, containing of multiple sections.
@@ -64,10 +64,10 @@ All tests passed (6 assertions in 1 test case)
 #### Run
 
 ```
-$ ./build/src/single_header_single_test_file/single_header_single_test_file
+$ ./build/src/single_header_single_test_file_one_source/single_header_single_test_file_one_source
 Everything seems to be working.
 
-$ ./build/src/single_header_single_test_file/tests
+$ ./build/src/single_header_single_test_file_one_source/tests
 ===============================================================================
 All tests passed (16 assertions in 1 test case)
 ```
