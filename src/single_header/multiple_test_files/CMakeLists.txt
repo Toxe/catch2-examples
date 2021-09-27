@@ -1,6 +1,6 @@
 add_executable(single_header_multiple_test_files main.cpp)
 
-set_target_properties(single_header_multiple_test_files PROPERTIES CXX_EXTENSIONS OFF)
+set_target_properties(single_header_multiple_test_files PROPERTIES CXX_EXTENSIONS OFF OUTPUT_NAME multiple_test_files)
 target_compile_features(single_header_multiple_test_files PUBLIC cxx_std_20)
 target_compile_options(single_header_multiple_test_files PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
 target_link_libraries(single_header_multiple_test_files PRIVATE ${SANITIZER_FLAGS} testee)

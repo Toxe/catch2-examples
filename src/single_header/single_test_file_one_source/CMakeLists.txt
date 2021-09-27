@@ -1,6 +1,6 @@
 add_executable(single_header_single_test_file_one_source main.cpp)
 
-set_target_properties(single_header_single_test_file_one_source PROPERTIES CXX_EXTENSIONS OFF)
+set_target_properties(single_header_single_test_file_one_source PROPERTIES CXX_EXTENSIONS OFF OUTPUT_NAME single_test_file_one_source)
 target_compile_features(single_header_single_test_file_one_source PUBLIC cxx_std_20)
 target_compile_options(single_header_single_test_file_one_source PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
 target_link_libraries(single_header_single_test_file_one_source PRIVATE ${SANITIZER_FLAGS} testee)
