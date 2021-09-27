@@ -2,7 +2,7 @@
 
 A couple of examples and tests for structuring CMake projects using [Catch2](https://github.com/catchorg/Catch2). Compatible with CTest.
 
-> Note: All of these are highly contrived examples. The code we are testing is in a small library (`src/libtestee`) and usually the test files would/should be inside the same directory that contains the code itself. But for the purpose of these examples the test files are actually outside of that directory tree.
+> Note: All of these are highly contrived examples. The code we are testing sits in a small library (`src/libtestee`) and usually the test files would/should be inside the same directory that contains the code itself. But for the purpose of these examples the test files are actually outside of that directory tree.
 
 ## Build
 
@@ -96,7 +96,7 @@ All tests passed (16 assertions in 3 test cases)
 
 ## CTest
 
-You can either run each test file individually (see above) or run them with CTest.
+Either run each test file individually (see above) or with CTest.
 
 ```
 $ cd build
