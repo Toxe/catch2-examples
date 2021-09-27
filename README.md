@@ -1,6 +1,6 @@
 # Catch2 Examples
 
-A couple of examples and tests for structuring CMake projects using Catch2.
+A couple of examples and tests for structuring CMake projects using [Catch2](https://github.com/catchorg/Catch2). Compatible with CTest.
 
 > Note: All of these are highly contrived examples. The code we are testing is in a small library (`src/libtestee`) and usually the test files would/should be inside the same directory that contains the code itself. But for the purpose of these examples the test files are actually outside of that directory tree.
 
@@ -84,4 +84,50 @@ Everything seems to be working.
 $ ./build/src/single_header/single_test_file_multiple_sources/tests
 ===============================================================================
 All tests passed (16 assertions in 3 test cases)
+```
+
+## CTest
+
+You can either run each test file individually (see above) or run them with CTest.
+
+```
+$ cd build
+
+$ ctest -N
+Test project /home/toxe/Programmierung/catch2-examples/build
+  Test #1: test_add
+  Test #2: test_mul
+  Test #3: test_sub
+  Test #4: single_header_single_test_file_multiple_sources_tests
+  Test #5: single_header_single_test_file_one_source_tests
+
+Total Tests: 5
+
+$ ctest
+Test project /home/toxe/Programmierung/catch2-examples/build
+    Start 1: test_add
+1/5 Test #1: test_add ................................................   Passed    0.01 sec
+    Start 2: test_mul
+2/5 Test #2: test_mul ................................................   Passed    0.01 sec
+    Start 3: test_sub
+3/5 Test #3: test_sub ................................................   Passed    0.01 sec
+    Start 4: single_header_single_test_file_multiple_sources_tests
+4/5 Test #4: single_header_single_test_file_multiple_sources_tests ...   Passed    0.01 sec
+    Start 5: single_header_single_test_file_one_source_tests
+5/5 Test #5: single_header_single_test_file_one_source_tests .........   Passed    0.01 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.05 sec
+```
+
+To run the tests in parallel:
+
+```
+$ ctest --progress -j4
+Test project /home/toxe/Programmierung/catch2-examples/build
+5/5 Test #3: test_sub
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.02 sec
 ```

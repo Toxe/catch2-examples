@@ -22,4 +22,6 @@ foreach(target ${ALL_TESTS})
     target_compile_options(${target} PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
     target_include_directories(${target} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} include)
     target_link_libraries(${target} PRIVATE ${SANITIZER_FLAGS} testee)
+
+    add_test(NAME ${target} COMMAND ${target})
 endforeach()

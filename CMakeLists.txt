@@ -3,6 +3,9 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 project("Catch2 Examples" LANGUAGES CXX)
 
+# enable testing with CTest
+include(CTest)
+
 # adjust or override some CMake defaults
 include(cmake/OverrideCMakeDefaults.cmake)
 
