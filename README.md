@@ -8,6 +8,14 @@ A couple of examples and tests for structuring CMake projects using [Catch2](htt
 
 Default build instructions for CMake.
 
+#### Disable Tests
+
+Tests are enabled by default. To disable building tests set the CMake flag `BUILD_TESTING` to `OFF`:
+
+```
+$ cmake [..] -DBUILD_TESTING=OFF
+```
+
 ### Linux + Mac
 
 ```
