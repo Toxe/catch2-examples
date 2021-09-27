@@ -3,7 +3,7 @@
 
 #include "testee.hpp"
 
-TEST_CASE("sub")
+TEST_CASE("single_header, multiple_test_files: sub")
 {
     REQUIRE(sub(0, 0) == 0);
     REQUIRE(sub(1, 0) == 1);

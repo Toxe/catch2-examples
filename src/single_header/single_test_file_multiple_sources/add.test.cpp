@@ -2,7 +2,7 @@
 
 #include "testee.hpp"
 
-TEST_CASE("add")
+TEST_CASE("single_header, single_test_file_multiple_sources: add")
 {
     REQUIRE(add(0, 0) == 0);
     REQUIRE(add(1, 0) == 1);

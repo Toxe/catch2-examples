@@ -2,7 +2,7 @@
 
 #include "testee.hpp"
 
-TEST_CASE("mul")
+TEST_CASE("single_header, single_test_file_multiple_sources: mul")
 {
     REQUIRE(mul(0, 0) == 0);
     REQUIRE(mul(1, 0) == 0);

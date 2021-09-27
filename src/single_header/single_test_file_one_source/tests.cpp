@@ -3,7 +3,7 @@
 
 #include "testee.hpp"
 
-TEST_CASE("libtestee")
+TEST_CASE("single_header, single_test_file_one_source: libtestee")
 {
     SECTION("add")
     {

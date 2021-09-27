@@ -3,7 +3,7 @@
 
 #include "testee.hpp"
 
-TEST_CASE("add")
+TEST_CASE("single_header, multiple_test_files: add")
 {
     REQUIRE(add(0, 0) == 0);
     REQUIRE(add(1, 0) == 1);
