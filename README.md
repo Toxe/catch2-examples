@@ -229,3 +229,32 @@ Test project /home/toxe/Programmierung/catch2-examples/build
 
 Total Test time (real) =   0.02 sec
 ```
+
+## Build Performance Comparison
+
+Build environment:
+
+- AMD Ryzen 9 3900X (12 cores)
+- Ubuntu 21.04 running on WSL2 on Windows 10
+- Clang 12 with LibC++
+
+Times are measured either recompiling the whole project (including `libtestee`, the main programs, all the tests and in case of Catch2 v3 the static library)
+or just rebuilding the test programs after their code has changed.
+
+#### Catch2 v2 Single Header
+
+Building only Catch2 v2 examples.
+
+|               | ninja -j 1 | ninja -j 8 | ninja -j 26 |
+| ------------- | ---------- | ---------- | ----------- |
+| clean rebuild | 32.862 s   | 7.350 s    | 7.196 s     |
+| only tests    | 30.857 s   | 7.094 s    | 6.816 s     |
+
+#### Catch2 v3 Static Library
+
+Building only Catch2 v3 examples.
+
+|               | ninja -j 1 | ninja -j 8 | ninja -j 26 |
+| ------------- | ---------- | ---------- | ----------- |
+| clean rebuild | 43.332 s   | 6.839 s    | 3.703 s     |
+| only tests    | 5.741 s    | 1.109 s    | 1.022 s     |
