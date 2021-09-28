@@ -8,14 +8,14 @@ target_link_libraries(single_header_multiple_test_files PRIVATE ${SANITIZER_FLAG
 # Tests
 if(BUILD_TESTING)
     set(ALL_TESTS
-        test_add
-        test_mul
-        test_sub
+        single_header_test_add
+        single_header_test_mul
+        single_header_test_sub
     )
 
-    add_executable(test_add add.test.cpp)
-    add_executable(test_mul mul.test.cpp)
-    add_executable(test_sub sub.test.cpp)
+    add_executable(single_header_test_add add.test.cpp)
+    add_executable(single_header_test_mul mul.test.cpp)
+    add_executable(single_header_test_sub sub.test.cpp)
 
     foreach(target ${ALL_TESTS})
         set_target_properties(${target} PROPERTIES CXX_EXTENSIONS OFF)
