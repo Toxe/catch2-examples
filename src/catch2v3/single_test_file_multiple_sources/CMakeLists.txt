@@ -15,8 +15,8 @@ if(BUILD_TESTING)
 
     set_target_properties(catch2v3_single_test_file_multiple_sources_tests PROPERTIES CXX_EXTENSIONS OFF OUTPUT_NAME tests)
     target_compile_features(catch2v3_single_test_file_multiple_sources_tests PUBLIC cxx_std_20)
-    target_compile_options(catch2v3_single_test_file_multiple_sources_tests PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
-    target_link_libraries(catch2v3_single_test_file_multiple_sources_tests PRIVATE ${SANITIZER_FLAGS} testee Catch2::Catch2WithMain)
+    target_compile_options(catch2v3_single_test_file_multiple_sources_tests PRIVATE ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
+    target_link_libraries(catch2v3_single_test_file_multiple_sources_tests PRIVATE testee Catch2::Catch2WithMain)
 
     add_test(NAME catch2v3_single_test_file_multiple_sources_tests COMMAND catch2v3_single_test_file_multiple_sources_tests)
 endif()

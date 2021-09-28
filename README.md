@@ -43,7 +43,8 @@ $ cmake [..] -DBUILD_TESTING=OFF
 
 #### Sanitizers and Static Analysis
 
-The code can be compiled with sanitizer and static analysis support. Look here for the details: https://github.com/Toxe/cpp-sanitizers
+The code can be compiled with sanitizer and static analysis support. Look here for the details: https://github.com/Toxe/cpp-sanitizers.
+The test binaries themselves won't be build with sanitizer support.
 
 #### Disable Building Catch2 v2 or v3 Examples
 

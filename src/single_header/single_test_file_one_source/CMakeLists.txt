@@ -11,9 +11,9 @@ if(BUILD_TESTING)
 
     set_target_properties(single_header_single_test_file_one_source_tests PROPERTIES CXX_EXTENSIONS OFF OUTPUT_NAME tests)
     target_compile_features(single_header_single_test_file_one_source_tests PUBLIC cxx_std_20)
-    target_compile_options(single_header_single_test_file_one_source_tests PRIVATE ${SANITIZER_FLAGS} ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
+    target_compile_options(single_header_single_test_file_one_source_tests PRIVATE ${DEFAULT_COMPILER_OPTIONS_AND_WARNINGS})
     target_include_directories(single_header_single_test_file_one_source_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} include)
-    target_link_libraries(single_header_single_test_file_one_source_tests PRIVATE ${SANITIZER_FLAGS} testee)
+    target_link_libraries(single_header_single_test_file_one_source_tests PRIVATE testee)
 
     add_test(NAME single_header_single_test_file_one_source_tests COMMAND single_header_single_test_file_one_source_tests)
 endif()
