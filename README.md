@@ -237,6 +237,7 @@ Build environment:
 - AMD Ryzen 9 3900X (12 cores)
 - Ubuntu 21.04 running on WSL2 on Windows 10
 - Clang 12 with LibC++
+- Debug build
 
 Times are measured either recompiling the whole project (including `libtestee`, the main programs, all the tests and in case of Catch2 v3 the static library)
 or just rebuilding the test programs after their code has changed.
