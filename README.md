@@ -15,6 +15,24 @@ either as a single header or as a statically compiled library (Catch2 v3). Compa
 
 Default build instructions for CMake.
 
+#### Linux + Mac
+
+```
+$ mkdir build
+$ cd build
+$ cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug ..
+$ ninja
+```
+
+#### Windows
+
+```
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+$ cmake --build . --config Debug
+```
+
 #### Disable Tests
 
 Tests are enabled by default. To disable building tests set the CMake flag `BUILD_TESTING` to `OFF`:
@@ -27,22 +45,12 @@ $ cmake [..] -DBUILD_TESTING=OFF
 
 The code can be compiled with sanitizer and static analysis support. Look here for the details: https://github.com/Toxe/cpp-sanitizers
 
-### Linux + Mac
+#### Disable Building Catch2 v2 or v3 Examples
+
+To prevent building Catch2 v2 or v3 examples set the CMake flags `DISABLE_CATCH2v2` or `DISABLE_CATCH2v3` to `ON`:
 
 ```
-$ mkdir build
-$ cd build
-$ cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug ..
-$ ninja
-```
-
-### Windows
-
-```
-$ mkdir build
-$ cd build
-$ cmake -DCMAKE_BUILD_TYPE=Debug ..
-$ cmake --build . --config Debug
+$ cmake [..] -DDISABLE_CATCH2v2=ON
 ```
 
 ## `src/libtestee`

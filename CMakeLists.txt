@@ -19,15 +19,23 @@ include(cmake/StaticAnalyzers.cmake)
 include(cmake/Sanitizers.cmake)
 
 # Catch2 v3
-include(FetchContent)
+if(NOT DISABLE_CATCH2v3)
+    include(FetchContent)
 
-FetchContent_Declare(Catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG devel)
-FetchContent_MakeAvailable(Catch2)
+    FetchContent_Declare(Catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.git GIT_TAG devel)
+    FetchContent_MakeAvailable(Catch2)
+endif()
 
 add_subdirectory(src/libtestee)
-add_subdirectory(src/single_header/multiple_test_files)
-add_subdirectory(src/single_header/single_test_file_multiple_sources)
-add_subdirectory(src/single_header/single_test_file_one_source)
-add_subdirectory(src/catch2v3/multiple_test_files)
-add_subdirectory(src/catch2v3/single_test_file_multiple_sources)
-add_subdirectory(src/catch2v3/single_test_file_one_source)
+
+if(NOT DISABLE_CATCH2v2)
+    add_subdirectory(src/single_header/multiple_test_files)
+    add_subdirectory(src/single_header/single_test_file_multiple_sources)
+    add_subdirectory(src/single_header/single_test_file_one_source)
+endif()
+
+if(NOT DISABLE_CATCH2v3)
+    add_subdirectory(src/catch2v3/multiple_test_files)
+    add_subdirectory(src/catch2v3/single_test_file_multiple_sources)
+    add_subdirectory(src/catch2v3/single_test_file_one_source)
+endif()
