@@ -10,6 +10,7 @@ either as a single header or as a statically compiled library (Catch2 v3). Compa
 - [Single Header Examples](#single-header-examples)
 - [Catch2 v3 Examples](#catch2-v3-examples)
 - [CTest](#ctest)
+- [Build Performance Comparison](#build-performance-comparison)
 
 ## Build
 
