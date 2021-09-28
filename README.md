@@ -5,6 +5,12 @@ either as a single header or as a statically compiled library (Catch2 v3). Compa
 
 > Note: All of these are highly contrived examples. The code we are testing sits in a small library (`src/libtestee`) and usually the test files would/should be inside the same directory that contains the code itself. But for the purpose of these examples the test files are actually outside of that directory tree.
 
+- [Build](#build)
+- [`src/libtestee`](#srclibtestee)
+- [Single Header Examples](#single-header-examples)
+- [Catch2 v3 Examples](#catch2-v3-examples)
+- [CTest](#ctest)
+
 ## Build
 
 Default build instructions for CMake.
@@ -16,6 +22,10 @@ Tests are enabled by default. To disable building tests set the CMake flag `BUIL
 ```
 $ cmake [..] -DBUILD_TESTING=OFF
 ```
+
+#### Sanitizers and Static Analysis
+
+The code can be compiled with sanitizer and static analysis support. Look here for the details: https://github.com/Toxe/cpp-sanitizers
 
 ### Linux + Mac
 
